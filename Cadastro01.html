@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+             .BG{
+                background-color: #ffffff;
+                width: 100%;
+                align-items: center;
+                justify-content: center;
+            }
+            .qPrincipal{
+                width: 50%;
+                background-color: rgba(255, 99, 71, 0);
+                margin-left: 25%;     
+            }
+            .linha1{
+                background-color:rgba(0, 128, 128, 0);
+                width: 100%;
+                height: auto;
+                margin-top:50px ;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 40px;
+                margin-bottom: 1%;
+            }
+            .linha2{
+                background-color:rgba(255, 255, 0, 0);
+                width: 100%;
+                height: auto;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 20px;
+            }
+            fieldset{
+                background-color: transparent;
+                height: 30%;
+                border-style: solid;
+                border-color: #a1a0a0;
+                border-radius: 10px;
+                padding-left: 1%;
+                padding-top: 1%;
+                padding-right: 1%;
+                padding-bottom: 1%;
+                display: flex;
+                align-items: center;
+                align-content: center;
+            }
+            .qDados1{
+                width: 20%;
+                height: 100%;
+                background-color: rgba(153, 205, 50, 0);
+            }
+            .qDados2{
+                width: 15%;
+                height: 100%;
+                background-color: rgba(130, 140, 228, 0);
+                padding-right: 1%;
+            }
+            .qDados3{
+                width:60% ;
+                height: 100%;
+                background-color: rgba(130, 140, 228, 0);
+                padding-right: 1%;
+                margin-left: 1%;
+            }
+            .linha3{
+                background-color:rgba(255, 255, 0, 0);
+                width:100%;
+                height: auto;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 20px;
+                align-items: center;
+                align-content: center;
+                display: flex;
+                margin-top: 1%;
+                padding-right: 3%;
+            }
+            .linha4{
+                background-color:rgba(255, 255, 0, 0);
+                width:100%;
+                height: auto;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 20px;
+                align-items: center;
+                align-content: center;
+                display: flex;
+                margin-bottom: 9%;
+                padding-right: 3%;
+            }
+            .imagem{
+                width:100%;
+                height: 100%;
+            }
+            input{
+                width: 30%;
+                font-size: 100%;
+                border-radius: 5px;
+                margin-left: 3%;
+                margin-right: 2%;
+            }
+            input{
+                width: 50%;
+                font-size: 100%;
+                border-radius: 5px;
+                margin-left: 3%;
+                margin-right: 2%;
+            }
+            select{
+                width: 50%;
+                height: 30px;
+                font-size: 100%;
+                border-radius: 5px;
+                margin-left: 3%;
+                border-width: 2px;
+                border-color: rgb(75, 74, 74);
+            }
+            .margem{
+                margin-left: 1%;
+            }
+            .margem1{
+                margin-left: -15%;
+            }
+            .label-float{
+                position: relative;
+                padding-top: 13px;
+            }
+            .label-float input{
+                border: 0;
+                border-bottom: 2px solid lightgrey;
+                outline: none;
+                min-width: 100%;
+                font-size: 16px;
+                transition: all .3s ease-out;
+                -webkit-transition: all .3s ease-out;
+                -moz-transition: all .3s ease-out;
+                -webkit-appearance:none;
+                border-radius: 0;
+            }
+            .label-float input:focus{
+                border-bottom: 2px solid #3951b2;
+            }
+            .label-float input::placeholder{
+                color:transparent;
+            }
+            .label-float label{
+                pointer-events: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+                margin-top: 13px;
+                transition: all .3s ease-out;
+                -webkit-transition: all .3s ease-out;
+                -moz-transition: all .3s ease-out;
+            }
+            .label-float input:required:invalid + label{
+                color: red;
+            }
+            .label-float input:focus:required:invalid{
+                border-bottom: 2px solid red;
+            }
+            .label-float input:required:invalid + label:before{
+                content: '*';
+            }
+            .label-float input:focus + label,
+            .label-float input:not(:placeholder-shown) + label{
+                font-size: 13px;
+                margin-top: 0;
+                color: #b23939;
+            }
+            .espaço{
+                width: 10%;
+                background-color: #3951b200;
+            }
+            input[type=radio] {
+                background-color: #3951b2;
+                width:auto;
+            }
+            .botao {
+               background-color: rgb(206, 204, 204);
+               font-family: 'Times New Roman', Times, serif;
+               font-size: 20px;
+               width: auto;
+               height: 20px;
+               margin-left: 1%;
+               border-radius: 3px;
+               border-style: inset;
+               border-color: #c2c1c1;
+               margin-right: 1%;
+            }
+            .botao:hover {
+               background-color: rgb(161, 158, 158);
+               border-color: #7b7b7b;
+            }
+        </style>
+    </head>
+    <body class="BG">
+        <div class="qPrincipal">
+            <div class="linha1">
+                Cadastro de Clientes
+            </div>
+            <form id="formulario" autocomplete="off">
+                <fieldset>
+                    <legend>Dados Pessoais</legend>
+                    <div class="qDados1">
+                        <img class="imagem" src="data:image/png;base64,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" width="100%" height="100%"/>
+                    </div>
+                    <div class="qDados2">
+                        <div class="linha4">
+                            Nome:
+                        </div>
+                        <div class="linha4">
+                            Nascimento:
+                        </div>
+                        <div class="linha4">
+                            Gênero:
+                        </div>
+                        <div class="linha4">
+                            Formação:
+                        </div>
+                        <div class="linha4">
+                            CPF:
+                        </div>
+                    </div>
+                    <div class="qDados3">
+                        <div class="linha3">
+                            <input type="text" placeholder="Nome..." />
+                        </div>
+                        <div class="linha3">
+                            <input type="text" placeholder="dd/mm/aa..." />
+                        </div>
+                        <div class="linha3">
+                                <INPUT TYPE="RADIO" NAME="sexo" VALUE="fem"> feminino 
+                                <INPUT TYPE="RADIO" NAME="sexo" VALUE="masc"> masculino <br>
+                                
+                        </div>
+                        <div class="linha3">
+                            <select>
+                                <option value="Selecione sua formação"></option>
+                                <option value="EMI">Ensino médio incompleto</option>
+                                <option value="EMc">Ensino médio completo</option>
+                                <option value="ESI">Ensino superior incompleto</option>
+                                <option value="EMI">Ensino superior completo</option>
+                                <option value="EMI">Pós graduação incompleto</option>
+                                <option value="EMI">Pós graduação completo</option>
+                                <option value="EMI">Doutorado incompleto</option>
+                                <option value="EMI">Doutorado completo</option>
+                            </select>
+                            <div class="margem"></div>
+                            Profissão:
+                            <select>
+                                <option value=""></option>
+                                <option value="EMI">Administrador de banco de dados</option>
+                                <option value="EMc">Alfaiate de computadores</option>
+                                <option value="ESI">Analista de user experience</option>
+                                <option value="EMI">Arquiteto de redes</option>
+                                <option value="EMI">Business inteligence</option>
+                                <option value="EMI">Cientista da computação</option>
+                                <option value="EMI">Coach de metodologia agile</option>
+                                <option value="EMI">Computação</option>
+                                <option value="EMI">Data protection officer</option>
+                                <option value="EMI">Defesa cibernética</option>
+                                <option value="EMI">Desenhista gráfico</option>
+                                <option value="EMI">Desenvolvedor de plataforma salesforce</option>
+                                <option value="EMI"> Desenvolvedor em JavaScript</option>
+                                <option value="EMI">Desenvolvedor front end</option>
+                                <option value="EMI">Desenvolvedor web</option>
+                                <option value="EMI">Designer de chatbot</option>
+                                <option value="EMI">Detetive de dados</option>
+                                <option value="EMI">Diretor de fotografia</option>
+                                <option value="EMI">Editor de filmagem</option>
+                                <option value="EMI">Endenheiro Devops</option>
+                                <option value="EMI">Engenheiro APM</option>
+                                <option value="EMI">Engenheiro de IOT</option>
+                                <option value="EMI">Engenheiro de software</option>
+                                <option value="EMI">Engenheiro de telecomunicações</option>
+                                <option value="EMI">Especialista em blockchain</option>
+                                <option value="EMI">Especialista em inteligência artificial</option>
+                                <option value="EMI">Ethical hacker</option>
+                                <option value="EMI">Gerente de smart homes</option>
+                                <option value="EMI">Growth hacker</option>
+                                <option value="EMI">Marketing digital</option>
+                                <option value="EMI">Profissional de help desk</option>
+                                <option value="EMI">Programador de jogos digitais</option>
+                                <option value="EMI">Programador web</option>
+                                <option value="EMI">Psicólogo de robô</option>
+                                <option value="EMI">Reciclador de dados</option>
+                                <option value="EMI">Recrutador especialista em TI</option>
+                                <option value="EMI">Representante de vendas digitais</option>
+                                <option value="EMI">Robótica</option>
+                                <option value="EMI">Segurança da informação</option>
+                                <option value="EMI">Social media</option>
+                                <option value="EMI">Statup coach</option>
+                                <option value="EMI">Suporte técnico</option>
+                                <option value="EMI">Técnico de som</option>
+                                <option value="EMI">Web designer</option>
+                            </select>
+
+                        </div>
+                        <div class="linha3">
+                            <input type="text" placeholder="123-456-789-00..." />
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+            <form id="formulario" autocomplete="off">
+                <fieldset>
+                    <legend>Contato</legend>
+                    <div class="qDados1">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABmJLR0QA/wD/AP+gvaeTAAAH4ElEQVR4nO2de2wUxx3Hv7P39oM738N2zudQIMUIpyFpgESQtnLTliZVm0qVKvUPIqEkICVKCUoKREmklfqkaUlM/+NRpCDlD6RKtJVatVKF2kap2qIqQZAASYBwxj57787nez92d/oHtdpGwO7dzt7O2vP51zOzX+33duc7M787AwKBQCAQCAQCwU3ZP3lk5/7JIzud1sEC4rQAK7x46JcJqulHQPAYABCQPxCq7vjRnl0zTmvrFNcasu/1w9sIpOMA7vjEnxRK6FMHdj/1ayd0WcV1huw5eDIUkEo/AeizuJ1+ihNBf+Np+Zlnyt1TZx1XGbL34NHNkgcnQLHWTHsKXAEhjx/Y/cRbdmtjhSsMkWXZW4+kngfwfQC+NrurAH6eD2mvHN61q8VeHVu4N+TlXxxZpWrkDQAPWRmHEPwDqr79x8/vvMRImi1ITgu4HfteP/a4qpGzsGgGAFCKzdRD3tk3eXQ3KOX2g8ilsE/GWdbwHI+5M+Q2cZY1XMZjbgwxHWdZw1k85sKQduMsa3iKx44aYjHOsoaLeOyYIaziLGucjseOxF6WcZY1Tsfjrl7Q7jjLGificdcM6WKcZU1X47HthjgWZ1nTpXhs6w1yOs6yphvx2BZDOIuzrLE1HjM3hNc4yxq74jHT2MtznGWNXfGYyUBui7OsYRmPLRtiJs7u2f4tq5fhgtdO/Op2f2YSj72ddmwnzg5GI51exk0kCCWn9r921FI87mgO2Xvw6OaAp/gOQL8LN68t7IBge60VOLtv8lhH82hbT4gsy976wOhLoPRl0M6frqUOAVaB0tP7J4/9IDif/qEsy6rZvqafkBdefaO3PpA6BUplWHjVLSO8oFRuRFK/23vgWL/ZTqYMkWVZ8viavwXF1zrXtzyhwJelAE7JsmzqXptq1AiPPkeACWvSljP0i/VIareZloaGyPJJPyX0Reuilj0vPXvoUMCokaEh9Ujp6wDiTCQtb2K9tPdRo0bGryxC72MiRwDoMLyXxmlJx512rTT+eEXFbIXaM3iHDPUSfGWVTSGS6CuNmhhfmSDIRMxNOH62hb9Pa3YN3xEPJD32GQISMmph+Mrq7QkaTkQCc5i5l4Yfhc3j6+4r1ap498JHaKl8fZrdgkfyYPyulYiG+xnMIQRkTSqJ4VgUZ85dRCY3z0QkAKyP81d8z1pTYiCMTZ9Zh/6eEObyBcPZ2PTLsjcUxBc2bUA6o+DM+Ytotkxvz9ySV7Yu3behz+fFhrHVWJ1KtpWJ2p69RocTSETD+Nd7HyCdUdrtviwYGYzh/vVjCAX9bfftKE4E/X5suXcc00oWZ85fQq3e7GSYJUfQ78e969ZgZXKo4zEs5btkIo5Htkbw7sXLuDw1jXZXFKUmRcvmnLAiQODtwlQ1OpzA/evXIuC3VmRjOXD7fF5svHstRobjOHPuEqr1uum+O39ft30d8uZjITyY9Ng2fijgx8bxMSQHY0zGY7YCuiMexaOf34TzH36MC1fSoJSvFThrCIDVqSQ2rFsDn5ed4UyXpB7Jg3vWrkZyMIZ/nruIYrnKcnhu6OsJYdPdY7bUCtiyRxCPhLFty0a8f/ka3rv8sR2XcARCCD595wjuGVsFj2TPa9C2o1hJkjB+16eQGoqjWm/gZrsGhx8JdmVSZ0Gt0cSXHvwsomHTp7EdYfvZeLi/Dx9cu47EQBjD8Sgk8t8b1O/nv2CFUgplfgEz2bztZgBdKlaglGIuX8BCqYLR4QT6egw3PbmgUqsjnVFQb3ZvndXV6pFGq4UP09OIRVZgJBGDJPG3lwUAuk6RyeWh5Attr62s4kg5T65QRKlSxehQAv29PU5IuCXlag3pWQWNpjNfxHWsvqrZUvHR1Awi/X1IDcXh9di3eDODpuuYVnLIFYqO6nC84K1QKqNcqyE1GEekv88RDcVyBenZLFqq9R1sqzhuCACoqoar07NY0VfC6FACPm93ZKmqhmklh3yx1JXrmYELQxYplqu4UE0jmYghFllh67UKpTKmZrNQNb5OQbkyBLjxLk/PKiiUKxgdSsDvYyuxpaqYms1ioVxhOi4ruDNkkVKligtXr2E4FkUiGmFSiZQrFHFdyUHXdQaj2QO3hgA31gPTSg4L5RsLyqC//RM44Mb6J51RUK7WGCtkD9eGLFKp1XHp6hQGoxEMxQZAiLnnhVKKbKGImWwOuu6O4wBXGAIAOqXI5Ob/87QM3nSz8n+pNZpIZ+ZQrTe6pJANrjFkkVqjecvNSuD/NwPdeEjmOkOAW29WOrEZyBpXGrLI4mZlYiAMAFDmFxxWZB1XG7LIUjBiET73v5cxwhDOEIZwhjCEM4QhnCEM4QxhCGcIQzhDGMIZwhDOEIZwhjCEM4QhnGHGEOerx5YIOtUN76WhIS1VzbGRI9A0fc6ojfHvZTWaf2MjR9BoNN82amP8hOi1n/JW3edGVE2nmuT9mVE7Q0O+s21bOqPk/spG1vJlRsn9+dsPb7lu1M5UysrSxjcKpQoX/+fPjRTLlepcnZr6vXVThuyYmChcyy5sLZQ4LYjlmEKpUp7J5B948qtb8mbat1Uye/z06UicBH4znIh9zukv2PCOqul0Zi77lxwa39wxMVEw26+jGuaTf3p7xEu17/n9voc8HikmEWlJVK9YRae6qml6rtlsvaUSz6tm5gyBQCAQCAQCgUAgcJp/A/LVGhWgTG95AAAAAElFTkSuQmCC" width="100%" height="100%"/>
+                     </div>
+                     <div class="qDados2">
+                        <div class="linha4">
+                            Email:
+                        </div>
+                        <div class="linha4">
+                            Telefone:
+                        </div>
+                        <div class="linha4">
+                            Celular:
+                        </div>
+                        <div class="linha4">
+                            Skype:
+                        </div>
+                     </div>
+                    <div class="qDados3">
+                        <div class="linha3">
+                            <input type="text" placeholder="exemplo@gmail.com..." />
+                        </div>
+                        <div class="linha3">
+                            <input type="text" placeholder="(00)1234-5678..." />
+                        </div>
+                        <div class="linha3">
+                            <input type="text" placeholder="(00) 1234-5678..." />
+                        </div>
+                        <div class="linha3">
+                            <input type="text" placeholder="..." />
+                        </div>
+                    </div>
+                </fieldset>
+              </form>
+              <form id="formulario" autocomplete="off">
+                <fieldset>
+                    <legend>Endereço</legend>
+                    <div class="qDados1">
+                        <img src="data:image/png;base64,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" width="100%" height="100%"/>
+                      </div>
+                      <div class="qDados2">
+                          <div class="linha4">
+                            Logradouro:
+                          </div>
+                          <div class="linha4">
+                            Numero:
+                         </div>
+                         <div class="linha4">
+                            Bairro:
+                         </div>
+                         <div class="linha4">
+                            Estado:
+                         </div>
+                         <div class="linha4">
+                            Complemento:
+                         </div>
+                      </div>
+                      <div class="qDados3">
+                        <div class="linha3">
+                            <input type="text" placeholder="..." />
+                        </div>
+                        <div class="linha3">
+                            <input type="text" placeholder="..." /> 
+                            <div class="margem"></div>
+                            CEP: <input type="text" placeholder="..." />
+                        </div>
+                        <div class="linha3">
+                            <input type="text" placeholder="..." />
+                            <div class="margem"></div>
+                            Cidade: <input type="text" placeholder="..." />
+                        </div>
+                        <div class="linha3">
+                            <select>
+                                <option value="Selecione seu estado"></option>
+                                <option value="EMI">AC</option>
+                                <option value="EMc">AL</option>
+                                <option value="EMI">AP</option>
+                                <option value="EMc">AM</option>
+                                <option value="EMI">BA</option>
+                                <option value="EMc">CE</option>
+                                <option value="EMI">DF</option>
+                                <option value="EMc">ES</option>
+                                <option value="EMI">GO</option>
+                                <option value="EMc">MA</option>
+                                <option value="EMI">MT</option>
+                                <option value="EMc">MS</option>
+                                <option value="EMI">MG</option>
+                                <option value="EMc">PA</option>
+                                <option value="EMI">PB</option>
+                                <option value="EMc">PR</option>
+                                <option value="EMI">PE</option>
+                                <option value="EMc">PI</option>
+                                <option value="EMI">RJ</option>
+                                <option value="EMc">RN</option>
+                                <option value="EMI">RS</option>
+                                <option value="EMc">RO</option>
+                                <option value="EMI">RR</option>
+                                <option value="EMc">SC</option>
+                                <option value="EMI">SP</option>
+                                <option value="EMc">SE</option>
+                                <option value="EMI">TO</option>
+                            </select>
+                        </div>
+                        <div class="linha3">
+                            <input type="text" placeholder="..." />
+                        </div>
+                    </div>   
+                </fieldset>
+              </form>
+              <div class="linha3">
+                  <div class="botao">
+                      Salvar Cliente
+                  </div>
+                  <div class="botao">
+                    Limpar Dados
+                </div>
+              </div>
+        </div>
+    </body>
+</html>
